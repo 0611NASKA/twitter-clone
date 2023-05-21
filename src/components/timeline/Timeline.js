@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Timeline.css";
 import TweetBox from './TweetBox';
 import Post from './Post';
+import db from "../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 function Timeline() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const postData = collection(db, "posts");
+    getDocs(postData).then((querySnapshots) => {
+      setPosts(querySnapshots.docs.map((doc) => doc.data()))
+    });
+  }, [])
+
   return (
     <div className='timeline'>
       <div className='timeline_header'>
@@ -11,15 +22,17 @@ function Timeline() {
       </div>
 
       <TweetBox />
-
-      <Post
-        displayName="テストだよ"
-        username="bokudayo"
-        verified={true}
-        text="test"
-        avatar=""
-        image="https://source.unsplash.com/random"
-      />
+      {posts.map((post) =>(
+        <Post
+          key={post.text}
+          displayName={post.displayName}
+          username={post.username}
+          verified={post.verified}
+          text={post.text}
+          avatar={post.avatar}
+          image={post.image}
+        />
+      ))}
     </div>
   )
 }
