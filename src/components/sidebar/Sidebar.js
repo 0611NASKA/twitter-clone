@@ -9,6 +9,7 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { Button } from '@mui/material';
 
 function Sidebar() {
   return (
@@ -23,6 +24,8 @@ function Sidebar() {
       <SidebarOption text="リスト" Icon={ListAltIcon} />
       <SidebarOption text="プロフィール" Icon={PermIdentityIcon} />
       <SidebarOption text="もっとみる" Icon={MoreHorizIcon} />
+
+      <Button variant="outlined" className="sidebar_tweet">ツイートする</Button>
     </div>
 
   )
