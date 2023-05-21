@@ -12,15 +12,14 @@ function Timeline() {
 
       <TweetBox />
 
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <Post
+        displayName="テストだよ"
+        user_name="bokudayo"
+        verified={true}
+        text="test"
+        avatar=""
+        image="https://source.unsplash.com/random"
+      />
     </div>
   )
 }
