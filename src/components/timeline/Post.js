@@ -1,6 +1,7 @@
 import { ChatBubbleOutline, FavoriteBorder, PublishOutlined, Repeat, VerifiedUser } from '@mui/icons-material'
 import { Avatar } from '@mui/material'
 import React from 'react'
+import "./Post.css"
 
 function Post() {
   return (
@@ -12,11 +13,13 @@ function Post() {
       <div className='post_body'>
         <div className='post_header'>
           <div className='post_headerText'>
-            <h3>テストだよ</h3>
-            <span className='post_headerSpecial'>
-              <VerifiedUser className='post_badge'/>
-              @bokudayo
-            </span>
+            <h3>
+              テストだよ
+              <span className='post_headerSpecial'>
+                <VerifiedUser className='post_badge'/>
+                @bokudayo
+              </span>
+            </h3>
           </div>
           <div className='post_headerDescription'>
             <p>なうなう</p>
