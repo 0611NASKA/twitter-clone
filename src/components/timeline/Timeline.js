@@ -14,7 +14,7 @@ function Timeline() {
 
       <Post
         displayName="テストだよ"
-        user_name="bokudayo"
+        username="bokudayo"
         verified={true}
         text="test"
         avatar=""
