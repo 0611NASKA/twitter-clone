@@ -1,8 +1,14 @@
 import './App.css';
+import Sidebar from './components/sidebar/Sidebar';
+import Timeline from './components/timeline/Timeline';
 
 function App() {
   return (
-    <div className="App">こんにちは</div>
+    <div className="app">
+      <Sidebar />
+
+      <Timeline />
+    </div>
   );
 }
 
