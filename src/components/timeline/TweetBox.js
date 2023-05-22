@@ -1,7 +1,7 @@
 import { Avatar, Button } from '@mui/material';
 import React, { useState } from 'react';
 import "./TweetBox.css";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import db from "../../firebase"
 
 function TweetBox() {
@@ -18,6 +18,7 @@ function TweetBox() {
       text: tweetMessage,
       avatar: "https://source.unsplash.com/random",
       image: tweetImage,
+      timestamp: serverTimestamp(),
     });
 
     setTweetMessage("");
